@@ -1,5 +1,10 @@
 package models
 
+type YUMSigning struct {
+	Keypair    string `json:"keypair"`
+	Passphrase string `json:"passphrase"`
+}
+
 type YUMAttributes struct {
 	// Validate that all paths are RPMs or yum metadata
 	// Enum: [PERMISSIVE STRICT]
@@ -21,4 +26,24 @@ type YUMHostedRepository struct {
 
 	Storage *Storage       `json:"storage"`
 	YUM     *YUMAttributes `json:"yum"`
+}
+
+type YUMProxyRepository struct {
+	Name          string         `json:"name"`
+	Online        bool           `json:"online"`
+	Storage       *Storage       `json:"storage"`
+	Cleanup       *Cleanup       `json:"cleanup,omitempty"`
+	Proxy         *Proxy         `json:"proxy"`
+	NegativeCache *NegativeCache `json:"negativeCache"`
+	HTTPClient    *HTTPClient    `json:"httpClient"`
+	RoutingRule   string         `json:"routingRule,omitempty"`
+	YumSigning    *YUMSigning    `json:"yumSigning"`
+}
+
+type YUMGroupRepository struct {
+	Name       string     `json:"name"`
+	Online     bool       `json:"online"`
+	Storage    *Storage   `json:"storage"`
+	Group      *Group     `json:"group"`
+	YumSigning YUMSigning `json:"yumSigning"`
 }

@@ -1,9 +1,8 @@
 package nexus_test
 
 import (
-	"github.com/stretchr/testify/assert"
-
 	"github.com/kaizendorks/nexus-go-client/models"
+	"github.com/stretchr/testify/assert"
 )
 
 func (suite *NexusClientSuite) TestRepositoryManagementYUMHosted() {
@@ -35,5 +34,57 @@ func (suite *NexusClientSuite) TestRepositoryManagementYUMHosted() {
 
 	// cleanup
 	err = suite.client.RepositoryManagement.Delete(name)
+	assert.NoError(suite.T(), err)
+}
+
+func (suite *NexusClientSuite) TestRepositoryManagementYUMProxy() {
+	name := "test-centos"
+	testRepository := models.YUMProxyRepository{
+		Name: name,
+		Cleanup: &models.Cleanup{
+			PolicyNames: []string{"weekly-cleanup"},
+		},
+		Storage: &models.Storage{
+			BlobStoreName:               "default",
+			StrictContentTypeValidation: true,
+		},
+		Proxy: &models.Proxy{
+			RemoteURL:      "https://mirrors.aliyun.com/centos/",
+			ContentMaxAge:  1440,
+			MetadataMaxAge: 1440,
+		},
+		NegativeCache: &models.NegativeCache{
+			Enabled:    true,
+			TimeToLive: 1440,
+		},
+		HTTPClient: &models.HTTPClient{
+			Blocked:   false,
+			AutoBlock: true,
+		},
+	}
+	err := suite.client.RepositoryManagement.CreateYUMProxy(testRepository)
+	assert.NoError(suite.T(), err)
+
+	err = suite.client.RepositoryManagement.UpdateYUMProxy(name, testRepository)
+	assert.NoError(suite.T(), err)
+}
+
+func (suite *NexusClientSuite) TestRepositoryManagementYUMGroup() {
+	name := "test-centos-group"
+	testRepository := models.YUMGroupRepository{
+		Name:   name,
+		Online: true,
+		Storage: &models.Storage{
+			BlobStoreName:               "default",
+			StrictContentTypeValidation: true,
+		},
+		Group: &models.Group{
+			MemberNames: []string{"test-centos"},
+		},
+	}
+	err := suite.client.RepositoryManagement.CreateYUMGroup(testRepository)
+	assert.NoError(suite.T(), err)
+
+	err = suite.client.RepositoryManagement.UpdateYUMGroup(name, testRepository)
 	assert.NoError(suite.T(), err)
 }
