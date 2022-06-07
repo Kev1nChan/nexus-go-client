@@ -32,6 +32,7 @@ type Client struct {
 	SecurityManagementUsers *SecurityManagementUsersAPI
 	Status                  *StatusAPI
 	Realms                  *RealmsAPI
+	Tasks                   *TaskAPI
 }
 
 type api struct {
@@ -73,12 +74,15 @@ func NewClient(config ClientConfig) Client {
 	c.SecurityManagementUsers = &SecurityManagementUsersAPI{client: &c}
 	c.Status = &StatusAPI{client: &c}
 	c.Realms = &RealmsAPI{client: &c}
-
+	c.Tasks = &TaskAPI{client: &c}
 	return c
 }
 
 func (c Client) sendRequest(method, path string, body io.Reader, headers map[string]string) ([]byte, error) {
 	requestURL := fmt.Sprintf("%s/service/rest/%s", c.Config.Host, path)
+	if path == "extdirect" {
+		requestURL = fmt.Sprintf("%s/service/%s", c.Config.Host, path)
+	}
 
 	request, err := http.NewRequest(method, requestURL, body)
 	if err != nil {
