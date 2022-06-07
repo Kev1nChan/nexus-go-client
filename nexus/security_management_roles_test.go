@@ -3,7 +3,7 @@ package nexus_test
 import (
 	"github.com/stretchr/testify/assert"
 
-	"github.com/kaizendorks/nexus-go-client/models"
+	"github.com/Kev1nChan/nexus-go-client/models"
 )
 
 func (suite *NexusClientSuite) TestSecurityManagementRolesList() {

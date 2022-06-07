@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/kaizendorks/nexus-go-client/nexus"
+	"github.com/Kev1nChan/nexus-go-client/nexus"
 )
 
 // Ensure user config is applied correctly.

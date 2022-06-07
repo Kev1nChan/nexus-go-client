@@ -1,7 +1,7 @@
 package nexus_test
 
 import (
-	"github.com/kaizendorks/nexus-go-client/models"
+	"github.com/Kev1nChan/nexus-go-client/models"
 	"github.com/stretchr/testify/assert"
 )
 

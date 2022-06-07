@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	. "github.com/kaizendorks/nexus-go-client/models"
+	. "github.com/Kev1nChan/nexus-go-client/models"
 )
 
 // CreateP2Proxy creates new P2 proxy repository

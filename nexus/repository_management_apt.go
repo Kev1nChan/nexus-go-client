@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	. "github.com/kaizendorks/nexus-go-client/models"
+	. "github.com/Kev1nChan/nexus-go-client/models"
 )
 
 // CreateAPTHosted creates APT hosted repository

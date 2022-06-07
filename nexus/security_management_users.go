@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	. "github.com/kaizendorks/nexus-go-client/models"
+	. "github.com/Kev1nChan/nexus-go-client/models"
 )
 
 type SecurityManagementUsersAPI api

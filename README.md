@@ -1,7 +1,7 @@
 # nexus-go-client
 >A minimal Golang client for interacting with the Nexus Repository APIs.
 
-[![Build Status](https://travis-ci.org/kaizendorks/nexus-go-client.svg?branch=master)](https://travis-ci.org/kaizendorks/nexus-go-client)
+[![Build Status](https://travis-ci.org/Kev1nChan/nexus-go-client.svg?branch=master)](https://travis-ci.org/Kev1nChan/nexus-go-client)
 
 ## Description
 
@@ -26,7 +26,7 @@ In the future we might abstact some of the common fuctionality in addition to cr
 ## Usage
 
 ```go
-import "github.com/kaizendorks/nexus-go-client/nexus"
+import "github.com/Kev1nChan/nexus-go-client/nexus"
 ```
 
 Construct a new Nexus client, then use the various services on the client to access different parts of the Nexus API. For example:

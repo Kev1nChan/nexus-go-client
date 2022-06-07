@@ -16,4 +16,4 @@ services:
     depends_on:
       - nexus
     volumes:
-      - .:/go/src/github.com/kaizendorks/nexus-go-client
+      - .:/go/src/github.com/Kev1nChan/nexus-go-client

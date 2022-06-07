@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/kaizendorks/nexus-go-client/nexus"
+	"github.com/Kev1nChan/nexus-go-client/nexus"
 )
 
 const DefaultDockerHost = "unix:///var/run/docker.sock"

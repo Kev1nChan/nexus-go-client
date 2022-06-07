@@ -6,7 +6,7 @@ package nexus
 // 	"fmt"
 // 	"net/http"
 //
-// 	. "github.com/kaizendorks/nexus-go-client/models"
+// 	. "github.com/Kev1nChan/nexus-go-client/models"
 // )
 
 // CreateS3Store creates an S3 blob store

@@ -6,6 +6,6 @@ RUN apk update \
       graphviz \
       ttf-freefont
 
-WORKDIR /go/src/github.com/kaizendorks/nexus-go-client
+WORKDIR /go/src/github.com/Kev1nChan/nexus-go-client
 COPY go.mod go.sum ./
 RUN go mod download

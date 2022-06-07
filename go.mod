@@ -1,4 +1,4 @@
-module github.com/kaizendorks/nexus-go-client
+module github.com/Kev1nChan/nexus-go-client
 
 go 1.14
 

@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/kaizendorks/nexus-go-client/models"
-	"github.com/kaizendorks/nexus-go-client/nexus"
+	"github.com/Kev1nChan/nexus-go-client/models"
+	"github.com/Kev1nChan/nexus-go-client/nexus"
 )
 
 func (suite *NexusClientSuite) TestSecurityManagementUsersList() {
