@@ -31,6 +31,7 @@ type Client struct {
 	SecurityManagementRoles *SecurityManagementRolesAPI
 	SecurityManagementUsers *SecurityManagementUsersAPI
 	Status                  *StatusAPI
+	Realms                  *RealmsAPI
 }
 
 type api struct {
@@ -71,6 +72,7 @@ func NewClient(config ClientConfig) Client {
 	c.SecurityManagementRoles = &SecurityManagementRolesAPI{client: &c}
 	c.SecurityManagementUsers = &SecurityManagementUsersAPI{client: &c}
 	c.Status = &StatusAPI{client: &c}
+	c.Realms = &RealmsAPI{client: &c}
 
 	return c
 }
